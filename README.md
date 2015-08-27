@@ -5,6 +5,6 @@
 
 - co-project owner: Claire Bendersky
 - co-project owner: Moose Abdul-Musawwir
-- scrum master: Phillip Ventura
-- technical team: Cristian Avalos
+- co-scrum master: Phillip Ventura
+- co-scrum master: Cristian Avalos
 
