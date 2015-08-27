@@ -7,6 +7,5 @@
   },
   "camelcase": true,
   "indent": 2,
-  "unused": true,
   "strict": true
 }
