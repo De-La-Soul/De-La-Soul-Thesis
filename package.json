@@ -4,6 +4,7 @@
   "description": "live music event search app",
   "main": "index.js",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.13.3",
     "jshint": "^2.8.0", 
     "angular":"^1.4.3",
@@ -16,6 +17,12 @@
       "gulp-rename": "^1.2.2",
       "gulp-uglify": "^1.2.0"
     },
+=======
+    "jshint": "^2.8.0"
+  },
+
+  "devDependencies": {},
+>>>>>>> 44ad94d5f0ca1f410da8766d0de24ee8b7ebafce
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,5 +35,12 @@
   "bugs": {
     "url": "https://github.com/De-La-Soul-Thesis/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/De-La-Soul-Thesis#readme"
+=======
+  "homepage": "https://github.com/De-La-Soul-Thesis#readme",
+  "dependencies": {
+    "jshint": "^2.8.0"
+  }
+>>>>>>> 44ad94d5f0ca1f410da8766d0de24ee8b7ebafce
 }
