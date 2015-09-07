@@ -6,11 +6,12 @@
     "De-La-Soul-Thesis-Team"
   ],
   "description": "Find music events",
-  "main": "public/js/app.js",
+  "main": "index.js",
   "moduleType": [
     "node"
   ],
   "license": "MIT",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -19,7 +20,9 @@
     "tests"
   ],
   "dependencies": {
+    "angular-ui-router": "~0.2.11",
     "angular-ui-date": "~0.0.8",
-    "pickadate": "~3.5.6"
+    "pickadate": "~3.5.6",
+    "ui-router": "~0.2.15"
   }
 }

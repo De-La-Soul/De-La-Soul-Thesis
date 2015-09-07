@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html ng-app="soundGlomerate.results"> <!-- !!NECESSARY!! -->
+<head>
+  <!-- <meta charset="utf-9"/> -->
+  <title>SoundGlomerate</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  
+
+</head>
+<body>
+  <!-- Testing for the results view GET RID OF THE STUFF ABOVE-->
+
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+  <div ng-controller="ResultsController as results"> <!-- !!NECESSARY!! CONNECT TO THE RESULTS CONTROLLER  -->
+    <div ng-repeat="event in apiData"> <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
+      <div class="row" style="margin:10px 10px 0px;border:1px solid grey;border-radius:5px;">
+        <div class="col-xs-3" style="background-color:white;padding:5px;">
+          <a ng-href="{{event.url}}"><img ng-src="{{event.logo.url}}" class="img-responsive" width="200px" height="162px" /></a> <!-- EVENT IMAGE -->
+        </div> <!-- end of col-xs-3 --> 
+        <div class="col-xs-9">
+          <h4>{{event.name.text}}</h4> <!-- NAME OF THE EVENT -->
+          <ul>
+            <!-- Minified event desrciption -->
+            <li>{{event.description.text.slice(0,100)}}</li> 
+
+            <li><span style="color:grey">date:</span> {{event.start.local.slice(0,10)}}</li>
+            
+            <!-- COST OF THE EVENT  -->
+            <!-- <li>{{event.description.price | currency}}</li>  -->
+
+            <!-- LINK TO PURCHASE TICKETS -->
+            <li><a ng-href="{{event.url}}">buy tickets</a></li> 
+          </ul>
+        </div><!-- end of col-xs-9 -->
+      </div>  <!-- end of row -->
+    </div> 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Testing for the results view GET RID OF THE STUFF BELOW-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- consider changing the href by downloading the library locally -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+<!-- this maybe superfluous -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+  <!-- File handling the API query -->
+  <script src="../search/search.services.js"></script>
+  <!-- File location where the results SERVICES lies -->
+  <script src="results.services.js"></script>
+  <!-- File where the results CONTROLLER lies -->
+  <script type="text/javascript" src="results.js"></script>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,63 @@
+<!-- goals:
+2. Search Bar
+- view 
+~ /3 input forms
+~ /search button
+~ /queried location ($scope.location)
+- controller ~
+~ $scope elements for each input 
+~ /$scope.location
+~ /$scope.startDate
+~ /$scope.endDate
+~ /$scope.clickFxn (calls the service Fxn)
+- services ~
+~ HTTP GET
+~ eventbrite API info (send)
+~ On success, store and parse data 
+-->
+
+<html ng-app="soundGlomerate.search"> <!-- DELETE ME -->
+<head><!-- DELETE ME -->
+  <meta charset="utf-8"/> <!-- DELETE ME -->
+  <script type="text/javascript" src"../bower_components/pickdate/lib/picker.date.js"></script> <!-- DELETE ME -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script> <!-- DELETE ME -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script src="../app.js"></script> <!-- DELETE ME -->
+  <script src="search.js"></script> <!-- DELETE ME -->
+  <script src="search.services.js"></script> <!-- DELETE ME -->
+</head> <!-- DELETE ME -->
+<body> <!-- DELETE ME -->
+<div class="row"  style="background-color:black;opacity:.5;padding:2px;text-align:center">
+  <div ng-controller="SearchController">
+    
+    <!-- NOTE TO SELF: 1. MAKE A BUTTON THAT GRABS THE LOCATION, START AND END DATES, 2. CLEAR FORM AFTER THE SUBMIT BUTTON IS HIT 3. MAKE CUSTOM DIRECTIVE? THAT AUTOCOMPLETES/CITY CHECKER. LOOK HERE FIRST: http://winkervsbecks.github.io/locator/-->
+    <!-- form where user types in location. -->
+    <div class="col-xs-3">
+    <input type="text" ng-model="search.location" placeholder="Enter Location" required>
+    <!-- <p>{{search.location}}</p> -->
+    <!-- <p>{{EBEvents}}</p> -->
+    </div> <!-- end of col-xs-3 -->
+
+    <div class="col-xs-3">
+    <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker -->
+    <input type="date" ng-model="search.startDate" class="datepicker" min="2015-09-03" max="2113-12-31"/> 
+    <!-- <p>{{search.startDate | date }}</p> -->
+    </div> <!-- end of col-xs-3 -->
+
+    <div class="col-xs-3">
+    <!-- NOTE TO SELF: MAKE CUSTOM DIRECTIVE datePicker. TRY TO SET DATE MAX AT ONE/TWO YEARS IN THE FUTURE -->
+    <input type="date" ng-model="search.endDate" class="datepicker" min="{{search.startDate}}" max="2113-12-31"/> 
+    <!-- <p>{{search.endDate | date }}</p> -->
+
+    </div> <!-- end of col-xs-3 -->
+
+
+    <!-- submit button that grabs data when clicked. FOR FUTURE, MAKE THIS ALSO AVAILABLE WHEN USER HITS ENTER -->
+    <div class="col-xs-3">
+    <input type="submit" ng-show="search.location" ng-click="getEBEvents()" value="Submit" />
+    </div> <!-- end of col-xs-3 -->
+  </div>
+  </div> <!-- end of row -->
+</body> <!-- DELETE ME -->
+</html> <!-- DELETE ME -->
