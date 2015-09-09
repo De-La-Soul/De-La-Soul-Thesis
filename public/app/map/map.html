@@ -10,6 +10,6 @@
     <input ng-click="deleteMarkers()" type="button" value="Delete Markers">
   </div> -->
   <map center="37.8, -122.27" zoom="12" on-click="addMarker()">
-    <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.lng}}"></marker>
+    <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.long}}"></marker>
   </map>
 </div>
