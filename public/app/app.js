@@ -7,6 +7,7 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.mapFactory',
   'soundGlomerate.results',
   'soundGlomerate.resultsFactory',
+  'soundGlomerate.keysFactory',
   'soundGlomerate.search',
   'soundGlomerate.searchFactory',
   'soundGlomerate.selectedEvent',

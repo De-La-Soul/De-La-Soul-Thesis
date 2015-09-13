@@ -4,10 +4,9 @@
     <!-- NOTE TO SELF: 1. MAKE A BUTTON THAT GRABS THE LOCATION, START AND END DATES, 2. CLEAR FORM AFTER THE SUBMIT BUTTON IS HIT 3. MAKE CUSTOM DIRECTIVE? THAT AUTOCOMPLETES/CITY CHECKER. LOOK HERE FIRST: http://winkervsbecks.github.io/locator/-->
     <!-- form where user types in location. -->
     <div class="col-xs-2">
-    <form ng-submit="getEBEvents()">
+    <form ng-submit="startSearch(search)">
     <input type="text" ng-model="search.location" placeholder="Enter Location" required>
     <!-- <p>{{search.location}}</p> -->
-    <!-- <p>{{EBEvents}}</p> -->
     </div> <!-- end of col-xs-3 -->
 
     <div class="col-xs-3">
@@ -26,7 +25,7 @@
 
     <!-- submit button that grabs data when clicked. FOR FUTURE, MAKE THIS ALSO AVAILABLE WHEN USER HITS ENTER -->
     <div class="col-xs-3">
-    <input type="submit" ng-show="search.location" ng-click="getEBEvents()" value="Submit" />
+    <input type="submit" ng-show="search.location" ng-click="startSearch(search)" value="Submit" />
     </div> <!-- end of col-xs-3 -->
     </form>
   </div>

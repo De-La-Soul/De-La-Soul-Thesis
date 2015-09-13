@@ -3,10 +3,10 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
 
 .controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent','Map', function ($scope, $state, Results, SelectedEvent, Map) {
 
-    $scope.apiData = Results.service.events;
+    $scope.apiData = Results.events;
 
   // A click event to list for a click on the div, link, or event
-    $scope.selectedEvent = function(event){
+    $scope.selectedEvent = function(event) {
       // Stores the selected event for display in the selectedEvent view
       SelectedEvent.yourEvent = event;
 
@@ -16,30 +16,20 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
       console.log('Logging the event that was clicked on', event);
     };
 
-  $scope.positions = [{lat:37.8043637, long:-122.2711137}];
-  
-  
-  setTimeout(function(){
-    $scope.positions = Map.markerMapper(Results.service.events);
-    console.log($scope.positions)
-  }, 2000)
-
-
-
-    $scope.genres = {3001: "Alternative", 3002: "BluesJazz", 3003: "Classical", 3004: "Country", 3005: "Cultural", 3006: "EDMElectronic", 3007: "Folk", 3008: "HipHopRap", 3009: "Indie", 3010: "Latin", 3011: "Metal", 3012: "Opera", 3013: "Pop", 3014: "RB", 3015: "Reggae", 3016: "ReligiousSpiritual", 3017: "Rock", 3018: "Top40", 3999: "Other"};
-
-    function swap(obj){
+    $scope.positions = [{lat:37.8043637, long:-122.2711137}];
+ 
+    var swap = function (apiGenres) {
       var result = {};
-      for(var key in obj){
-        result[obj[key]] = key;
+      for (var genreCode in apiGenres) {
+        result[apiGenres[genreCode]] = genreCode;
       }
       return result;
     }
 
-    $scope.genresSwap = swap($scope.genres);
+    $scope.genresSwap = swap(Results.eventBriteGenres);
 
 
-    function setCurrentGenre(genre){
+    var setCurrentGenre = function (genre) {
       $scope.currentGenre = $scope.genresSwap[genre];
       console.log($scope.currentGenre);
     }; 
@@ -47,3 +37,4 @@ angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soun
     $scope.setCurrentGenre = setCurrentGenre; 
 }]);
 
+  
