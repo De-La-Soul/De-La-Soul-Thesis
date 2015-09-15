@@ -10,7 +10,7 @@
 
 ##Our Vision##
 
-Our goal is to provide a place for music lovers to fincs local music events in their area. Users should be able to find events ranging from large festivals and concerts, to DJ's at local clubs and lounges, to bands at small neigborhood bars and everything below and in between. Our focus here is music. Tell us where you'd like to find events (currently limited to Oakland, Berkeley and San Francisco) and we'll show you events in your area. You can even filter musical genre. We will be adding features soon. 
+Our goal is to provide a place for music lovers to find local events in their area. You should be able to find events ranging from large festivals and concerts, to DJ's spinning your favorite genres at local clubs and lounges, to bands at small neigborhood bars and everything below and in between. Our focus here is music. Tell us where you'd like to find events (currently limited to Oakland, Berkeley and San Francisco) and we'll show you events in your area. You can even filter musical genre. We will be adding more features soon...
 
 ##Installation##
 

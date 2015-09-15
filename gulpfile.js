@@ -3,13 +3,10 @@ var gulp   = require('gulp');
 var jshint = require('gulp-jshint');
 var shell = require('gulp-shell');
 var mocha = require('gulp-mocha');
-// var shell = require('gulp-shell');
-// var chai = require('chai');
-// var assert = require('assert');
-// var expect = require('chai').expect; 
+
 
 gulp.task('build', shell.task([
-  'npm install -g nodemon', 'npm install', 'npm install -g karma-cli', 'cd /Desktop/soundglomerate'
+  'npm install -g nodemon', 'npm install', 'npm install -g karma-cli'
 ]));
 
 gulp.task('start', shell.task([

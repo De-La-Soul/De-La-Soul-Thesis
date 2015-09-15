@@ -34,7 +34,7 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
 
     return $http({ // the direct API call with the user specificed input as the fxn's parameters
       method: 'GET',
-      url: 'https://www.eventbriteapi.com/v3/events/search/?popular=on&sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
+      url: 'https://www.eventbriteapi.com/v3/events/search/?sort_by=date&venue.city=' + city + '&venue.region=CA'+startDate+endDate+'&categories=103&expand=venue&token=' + APIkeys.eventBriteKey
     })
     .then(function(res){ // this is a promise that waits for the API to return info
         res.data.events.forEach(function(evnt){

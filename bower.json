@@ -26,6 +26,9 @@
     "ngmap": "~1.13.4",
     "pickadate": "~3.5.6",
     "ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.4",
+    "bootstrap": "~3.3.5",
     "angular-wurfl-image-tailor": "~0.9.4"
+
   }
 }

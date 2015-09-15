@@ -5,7 +5,7 @@
     <!-- form where user types in location. -->
     <div class="col-xs-2">
     <form ng-submit="getEBEvents()">
-    <input type="text" ng-model="search.location" placeholder="Enter Location" required>
+    <input type="text" class="form-control" ng-model="search.location" placeholder="Enter Location" typehead="city in cities" required>
     <!-- <p>{{search.location}}</p> -->
     <!-- <p>{{EBEvents}}</p> -->
     </div> <!-- end of col-xs-3 -->

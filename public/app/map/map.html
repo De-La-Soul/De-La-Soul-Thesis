@@ -3,13 +3,13 @@
   <marker position="37.7, -122.1" title="Hello World!"></marker>
 </map>
 -->
-<div class="mapContainer">
+<div class="mapContainer" style="border-style:solid">
 <!--   <div id="panel">
     <input ng-click="hideMarkers()" type="button" value="Hide Markers">
     <input ng-click="showMarkers()" type="button" value="Show All Markers">
     <input ng-click="deleteMarkers()" type="button" value="Delete Markers">
   </div> -->
-  <map style="width: 80%; height:40%; margin: 10px"center="37.8, -122.27" zoom="12" ng-click="addMarker()">
+  <map style="width: 80%; height:40%; margin:10px"center="37.8, -122.27" zoom="12" ng-click="addMarker()">
     <marker ng-repeat="pos in positions" position="{{pos.lat}}, {{pos.long}}"></marker>
   </map>
 </div>

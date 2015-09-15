@@ -21,6 +21,12 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
 .controller('SearchController', ['$scope', '$state', 'Search', function ($scope, $state, Search) { // naming the controller 'SearchController', requiring the 'Seach' factory and the $scope module. 
 
+  $scope.cities = {
+    oakland: 'Oakland',
+    berkeley: 'berkeley',
+    sanFrancisco: "San Francisco"
+
+  };
   $scope.update = function(search){ // makes user input into an object
     if(search === undefined){
       alert("must enter a location");
