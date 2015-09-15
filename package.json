@@ -4,7 +4,7 @@
   "description": "live music event search app",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
+    "start": "node index.js",
     "test": "npm run test-server",
     "postinstall": "bower cache clean && bower install"
   },
@@ -52,6 +52,7 @@
     "mocha": "^2.2.5",
     "nodemon": "^1.4.1",
     "oauth-sign": "^0.8.0",
+    "pg": "^4.4.1",
     "phantomjs": "^1.9.18",
     "request": "^2.61.0",
     "stringstream": "0.0.4",

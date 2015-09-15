@@ -1,9 +1,17 @@
 'use strict'
-angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soundGlomerate.selectedEventFactory', 'soundGlomerate.mapFactory', 'ngMap',"angular-wurfl-image-tailor"])
+angular.module('soundGlomerate.results', ['soundGlomerate.resultsFactory', 'soundGlomerate.selectedEventFactory', 'soundGlomerate.mapFactory', 'ngMap','angular-wurfl-image-tailor', 'angularUtils.directives.dirPagination', 'angularSpinners'])
 
-.controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent','Map', function ($scope, $state, Results, SelectedEvent, Map) {
+.controller('ResultsController', ['$scope', '$state', 'Results', 'SelectedEvent','Map', 'spinnerService', function ($scope, $state, Results, SelectedEvent, Map, spinnerService) {
 
     $scope.apiData = Results.service.events;
+
+    $scope.loading = true;   
+    
+    $scope.$watch('apiData.length', function(newVal, oldVal){    
+      if(newVal !== oldVal)    
+        $scope.loading = !($scope.loading);    
+    })   
+
 
   // A click event to list for a click on the div, link, or event
     $scope.selectedEvent = function(event){

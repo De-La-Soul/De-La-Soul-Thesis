@@ -23,7 +23,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory'])
 
   $scope.cities = {
     oakland: 'Oakland',
-    berkeley: 'berkeley',
+    berkeley: 'Berkeley',
     sanFrancisco: "San Francisco"
 
   };

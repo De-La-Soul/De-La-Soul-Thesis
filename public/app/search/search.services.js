@@ -44,9 +44,10 @@ angular.module('soundGlomerate.searchFactory', ['soundGlomerate.keysFactory'])
           events.push(evnt);
         });
         return events;
-      });
-
-  
+      })
+     .catch(function(err){    
+        console.log(err);    
+      })
   };
 
   return {

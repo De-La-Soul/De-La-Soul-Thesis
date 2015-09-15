@@ -27,9 +27,3 @@ app.post('/db/events', function(req, res){
     client.query('INSERT INTO events(id,name) values($1,$2)', [1,'cris Testing']);
   });
 });
-
-
-
-
-
-

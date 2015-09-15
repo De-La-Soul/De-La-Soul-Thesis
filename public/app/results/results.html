@@ -13,7 +13,8 @@
   </div> <!--  end of col-sm-4 -->
 
   <div class="col-xs-6"  style="border-style:solid; margin-left:10px">
-    <div  ng-repeat="event in apiData  | filter:currentGenre" > 
+   <spinner name="eventSpinner" img-src="http://media.giphy.com/media/npCmk0VCFHyUM/giphy.gif" show="loading"></spinner>
+    <div dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 6"> 
       <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
        <div>
         <div class="col-xs-4" style="background-color:white;">
@@ -41,6 +42,15 @@
 
     </div> <!-- end of event in apiData--> 
     </div>
+          <dir-pagination-controls
+          [max-size=""]
+          [direction-links=""]
+          [boundary-links=""]
+          [on-page-change=""]
+          [pagination-id=""]
+          [template-url=""]
+          [auto-hide=""]>
+        </dir-pagination-controls>
   </div>
 
   <!-- end of ResultsController -->
