@@ -4,10 +4,10 @@
 </map>
 -->
 
-<div class=" mapContainer" ng-controller="MapsController" style="border-style:solid; margin-top:20%">
+<div id="mapContainer" class="container col-xs-3 " ng-controller="MapsController">
 
 <!-- set the dimensions of the map, location of the center of the map, and map zoomlevel -->  
-  <map class"col-xs-3 pull-right" style="width: 80%; height:40%; margin: 10px" center="37.8, -122.33" zoom="10" styles="[{stylers:[{hue:'#890000'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#890000'}]}]">
+  <map center="37.8, -122.33" zoom="10" styles="[{stylers:[{hue:'#890000'},{visibility:'simplified'},{gamma:0.5},{weight:0.5}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{color:'#890000'}]}]">
 
     <!-- places markers on the map -->
     <marker ng-repeat="pos in positions" position="{{pos}}"></marker>

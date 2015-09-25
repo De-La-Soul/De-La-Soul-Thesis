@@ -1,5 +1,5 @@
 
-<div id="selectedEventView" class="container col-sm-8 pull-right" style="border-style:solid; margin-top:5%">
+<div id="selectedEventView" class="container col-sm-8 pull-right">
   <div id="selectedEventPic">
     <img ng-src="{{thisEvent.logo.url}}" class="img-responsive"/>
   </div>
@@ -8,10 +8,10 @@
   <div>
     <h3 id="selectedEventTitle" class="text-center">{{thisEvent.name.text}}</h3>
   </div>
-  <div id="selectedEventDscr" style="margin-top:25px;color:orange">
+  <div id="selectedEventDscr" >
     <p>{{thisEvent.description.text}}</p>
   </div>  
   <div>
-    <a target="_blank" ng-href="{{thisEvent.url}}" class="pull-right" style="color:orange">MORE EVENT INFO... (IT WILL OPEN IN A NEW WINDOW)</a>
+    <a target="_blank" ng-href="{{thisEvent.url}}" class="pull-right" >MORE EVENT INFO... (IT WILL OPEN IN A NEW WINDOW)</a>
   </div>  
 </div>

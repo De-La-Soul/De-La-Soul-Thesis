@@ -1,8 +1,7 @@
 'use strict()';
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/CristianAvalos';
 
-
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Martial-One';
 // 'postgres://localhost:5432/student' then this new table is going to be added to the /student user
 
 var client = new pg.Client(connectionString);

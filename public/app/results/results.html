@@ -1,20 +1,82 @@
 
-
-<div id="resultsFilter" class="col-xs-2 pull-left" style="border-style:solid;margin-top:100px" ng-controller="SearchController">
-  <p>Music Genre</p>
-  <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
-  <div ng-repeat="(key,value) in genresSwap">
-    <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
-  </div>
+<!-- The results filter div box  -->
+<div id="resultsFilter" class="col-xs-2 pull-left" ng-controller="SearchController">
+  <!-- Accordion style list angular bootstrap-->
+  <accordion close-others="oneAtATime">
+    <!-- The button links for the filter genres -->
+    <accordion-group id="filterGenre">
+       <accordion-heading >
+        Music Genres <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="/results" ng-click="setCurrentGenre(all)">All</a>
+      <div style="background-color:red; margin-top: 2px; opacity:.5; font-size: 18px" ng-repeat="(key,value) in genresSwap">
+      <a href="/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+      
+    </accordion-group>
+    <!-- Placeholder for artists filter -->
+    <accordion-group id="filterArtists">
+       <accordion-heading>
+        Artists <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+      <div ng-repeat="(key,value) in genresSwap">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+    </accordion-group>
+    <!-- Placeholder for venue filter -->
+    <accordion-group id="filterVenue">
+      <accordion-heading>
+        Venue<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+      <div ng-repeat="(key,value) in genresSwap">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+    </accordion-group>
+    <!-- Placeholder for price filter -->
+    <accordion-group id="filterPrice">
+      <accordion-heading>
+        Price<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+      <div ng-repeat="(key,value) in genresSwap">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+    </accordion-group>
+    <!-- Place holder for reviews filter -->
+    <accordion-group id="filterReviews">
+      <accordion-heading>
+        Reviews<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+      <div ng-repeat="(key,value) in genresSwap">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+    </accordion-group> 
+    <accordion-group id="filterOther">
+      <accordion-heading >
+        Other<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </accordion-heading>
+      <a href="#/results" ng-click="setCurrentGenre(all)">All</a>
+      <div ng-repeat="(key,value) in genresSwap">
+      <a href="#/results" ng-click="setCurrentGenre(key)">{{key}}</a>
+      </div>
+    </accordion-group> 
+  </accordion>
+  
 </div> <!--  end of col-sm-4 -->
 
-<spinner name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
+      <!-- <div ng-repeat="item in items">{{item}}</div> -->
+
+
+<spinner class="col-md-offset-5" name="eventSpinner" img-src="http://i769.photobucket.com/albums/xx331/maclisa2/elephant/thPink_Elephant.gif" show="loading"></spinner>
 
  <!-- <div class="clearfix visible-xs-block"></div> -->
-<div class="col-xs-6"  style=" margin-left:10px" ng-animate" 'animate' "> 
+<div class="col-xs-6"> 
 
 
-  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 | filter: selectedCity" style="margin:10px; " ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> 
+  <div  id="resultsPagingate" dir-paginate="event in apiData | filter: currentGenre | itemsPerPage: 15 | filter: selectedCity"  > 
   <!-- GET ALL THE EVENT INFO FROM THE DATAAPI OBJECT IN THE RESULTS CONTROLLER -->
     
     <!-- Must be a container in order get each border dive working -->
@@ -51,7 +113,7 @@
   </div><!-- end of col-xs-8-->
  <!-- end of event in apiData--> 
   
-  <dir-pagination-controls
+  <dir-pagination-controls class="col-md-offset-8"
   [max-size=""]
   [direction-links=""]
   [boundary-links=""]
