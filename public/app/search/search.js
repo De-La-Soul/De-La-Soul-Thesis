@@ -23,7 +23,7 @@ angular.module('soundGlomerate.search', ['soundGlomerate.searchFactory', 'ui.boo
     console.log('scope',$scope.selectedCity);
 
     Search.getEventBriteData($scope.search.location, $scope.search.startDate, $scope.search.endDate);
-    Search.scrappedData();
+    // Search.scrappedData();
     $state.go('app.resultsDisplay.results');
   };
 

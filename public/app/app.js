@@ -7,14 +7,13 @@ angular.module('soundGlomerate', [ // declare all controllers and services
   'soundGlomerate.mapFactory',
   'soundGlomerate.results',
   'soundGlomerate.resultsFactory',
-  'soundGlomerate.keysFactory',
   'soundGlomerate.search',
   'soundGlomerate.searchFactory',
   'soundGlomerate.selectedEvent',
   'soundGlomerate.selectedEventFactory',
+  'angular-wurfl-image-tailor',
   'ui.bootstrap',
   'ui.router',
-  'ui.bootstrap',
   'angularSpinners',
   'ngAnimate'
 ])
@@ -90,12 +89,13 @@ angular.module('soundGlomerate', [ // declare all controllers and services
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
       if(toState.url === "/"){
         document.body.style.background = 'white';
-        console.log(document.body.style);
+        
       } else if (toState.url === "/results"){
-        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundImage = "url('./assets/background1.jpg')";
         document.body.style.backgroundAttachment = 'fixed';
+        // document.body.= 'fixed';
       } else {
-        document.body.style.backgroundImage = "url('./assets/bgimage1-2.jpg')";
+        document.body.style.backgroundImage = "url('./assets/background1.jpg')";
         document.body.style.backgroundAttachment = 'fixed';
       }
       

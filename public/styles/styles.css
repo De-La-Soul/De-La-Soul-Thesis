@@ -16,11 +16,37 @@ body{
   background-color: white;
 }
 
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 nav{
-  background: -webkit-linear-gradient(right, #000000, #606060);
+  /*background: -webkit-linear-gradient(left, #000000, #606060);*/
   height:75px;
+  border-color: #000000;
+  background-image: url("../assets/background1.jpg");
 }
 
+#home{
+  margin-top: 15px;
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: red;*/
+  opacity: .3;
+  color: white !important;
+}
+
+#about{
+  margin-top: 15px;
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: red;*/
+  opacity: .3;
+  color: white !important;
+
+}
 /***********************************************************************/
 /************************** SEARCH BAR *********************************/
 /***********************************************************************/
@@ -37,14 +63,15 @@ nav{
   height: 60px;
   border-radius: 10px;
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 5px 5px #9C0505, 0px 0px 20px #9C0505 !important;
-
+  box-shadow: 1px 1px 5px 5px #9C0505, 0px 0px 20px #9C0505 !important;
+  transition-duration: 0.8s;
 }
 
 #searchLoc{
   margin-top: 10px;
   font-weight: bold;
   font-size: 14px;
+  transition-duration: 0.8s;
 }
 
 #startDate{
@@ -61,7 +88,7 @@ nav{
 
 input:hover{
   border-color: #9C0505 !important;
-  box-shadow: inset 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
+  box-shadow: 1px 1px 3px 2px #9C0505, 0px 0px 20px #9C0505 !important;
 
 }
 
@@ -126,7 +153,9 @@ button {
 #resultsEvent{
   /*border-top:solid; */
   /*border-bottom:solid; */
-  margin:10px;
+  margin-left: 5%;
+  margin-right: 30px;
+  margin-top: 10px;
   background: rgba(0,0,0,.5);
   color: rgba(255,255,255,.8);
   /*opacity: .3;*/
@@ -137,30 +166,19 @@ button {
 
 
 #resultsEvent:hover{
-  /*box-shadow: */
-  /*transform: translateY(-10px);
-  transform: translateX(-10px);*/
   -webkit-transform: translate3d(-3px, -3px, 5px);
-  /*display: inline-block;*/
-  /*vertical-align: middle;*/
-  /*-webkit-transform: translateZ(10px);*/
-  /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
-  /*-webkit-backface-visibility: hidden;*/
-  /*backface-visibility: hidden;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  font-family: 'chunk-webfont';
   src: url('../../includes/fonts/chunk-webfont.svg') format('svg');
   -webkit-font-smoothing: antialiased;
-  /*position: relative;*/
+  font-weight: bold;
   box-shadow: 2px 2px 10px 0px #9C0505, 4px 4px 9px 0px #000000  ;
-  /*-webkit-transition-duration: 0.3s;*/
-  transition-duration: 0.3s;
+  transition-duration: 0.5s;
   -webkit-transition-property: transform;
-  transition-property: transform;
 }
 
 #resultsEventImage{
-  }
+  height: 180px;
+  width: 250px;
+}
 
 #resultsEventLogo{
   margin-bottom: 10px;
@@ -168,15 +186,11 @@ button {
 }
 
 #resultsEventLogo:hover{
-  /*background-color: black;*/
-  -webkit-transform: translate3d(-3px, -3px, 3px);
+  -webkit-transform: translateY(5px);
   cursor: pointer;
-  /*border-color: red;*/
-  /*border-style: solid;*/
   transition-duration: 0.2s;
 }
 #resultsEventTitle{
-  
   color: #787878 ;
   font-size: 16px;
 }
@@ -193,26 +207,174 @@ button {
   line-height: 1.42857143;
 }
 
+/*
+.genreText{
+  text-decoration: none;
+  font: red;
+}*/
+
+/*********** FILTER (RESULTS VIEW) *************/
 
 
-
-/*************** FILTER ******************/
-
-div#resultsFilter > p{
-    color:black;
-    font-size: 18px;
-    font-weight: bold; 
+/*Panel settings before dropdown*/
+.panel-heading{
+  background-color: red !important;
 }
 
-hr#resultsFilter {
-    width: 100%;
+
+#resultsFilter{
+  /*position: fixed;*/
+  border-style:solid;
+  margin-top:100px;
+  /*margin-left: 3%;*/
+  padding-top: 20px;
+  background-color: red;
+  border-radius: 3px;
+  opacity: .7;
 }
+
+/*Background color of the dropped filter list*/
+#filterGenre{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterGenre a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterGenre a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterGenre a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterArtists{
+  background-color: black;
+}
+
+.filterAll {
+  /*background-color: red;*/
+}
+/*The button links for the filter genres */
+#filterArtists a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterArtists a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterArtists a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterVenue{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterVenue a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterVenue a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterVenue a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterPrice{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterPrice a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterPrice a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterPrice a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterReviews{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterReviews a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterReviews a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterReviews a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+#filterOther{
+  background-color: black;
+}
+
+/*The button links for the filter genres */
+#filterOther a{
+  color: black;
+}
+
+/*The filter list title when clicked on*/
+#filterOther a:focus{
+  outline: none;  
+}
+
+/*The filter list title when moused over*/
+#filterOther a:hover{
+  outline: none;  
+  font-size: 1.15em;
+}
+
+
+
+
+
+/**************** RESULTS MAP ****************/
+
 
 /***********************************************************************/
 /********************** SELECTED EVENT VIEW ****************************/
 /***********************************************************************/
 
-#selectedEventView{}
+#selectedEventView{
+  /*border-style:solid; */
+  margin-right: 5%;
+  margin-top:5%;
+  background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);
+}
 
 #selectedEventView #selectedEventPic{
   margin: 2em;
@@ -222,8 +384,6 @@ hr#resultsFilter {
   /*background: #890000;
   opacity: .43;
   color: #000000;*/
-  background: rgba(0,0,0,.7);
-  color: rgba(255,255,255,.8);
 } 
 
 #selectedEventDscr{
@@ -231,8 +391,8 @@ hr#resultsFilter {
   opacity: .4;
   font-size: 20px;
   color: #000000;*/
-  background: rgba(0,0,0,.7);
-  color: rgba(255,255,255,.8);
+  /*background: rgba(0,0,0,.7);
+  color: rgba(255,255,255,.8);*/
 } 
 
  
@@ -246,19 +406,30 @@ styling for map. this is a test
 *****************************************************************************
 */
 
-.mapContainer {
-  width:100%;
-
+#mapContainer {
+  /*width:100%;*/
+  margin-top: 30%;
+/*  position: fixed !important;
+*/
 }
 
 
 map {
-    height:400px;
-    width:25%;
-    margin: 20px;
+    /*height:800px;*/
+    width:400px;
+    /*width: 80%; */
+    height:40%; 
+    /*margin: 10px; */
+    /*margin-right: 3%;*/
+    margin-right: 30px;
+    opacity: .8;
 }
 
 /*************************** SPINNER *******************************/
+.spinner{
+
+}
+
 .spinner > div {
   background-color: #F0A83A;
   height: 100%;
@@ -290,46 +461,6 @@ map {
 
 
 
-
-/*div[ng-controller='MarkerRemoveCtrl'] {
-  position: relative;
-}
-
-div[ng-controller='MarkerRemoveCtrl'] #panel {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  margin-left: -180px;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-}
-*/
-
-
-/*@media screen and (max-width: 200px) {
-  body {
-    background-color: black;
-    background: url(../assets/bgimage.jpg) no-repeat center center scroll;
-
-  }
-}
-div #query{
-    color: black;
-}
-
-
-#signIn-btn{
-    margin-top:12px;
-    margin-bottom:5px;
-    background-color: red;
-    border-color: black;
-    height: 10px;
-    padding-top: 4px;
-
-}
-*/
 
 
 
